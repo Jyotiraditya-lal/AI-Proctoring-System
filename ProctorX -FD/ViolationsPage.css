@@ -1,0 +1,155 @@
+/* Advance UI Kit for Violations Page */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --bg-body: #0f172a;        /* Deep Space Blue */
+    --bg-card: #1e293b;        /* Slate Blue */
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent: #6366f1;         /* Indigo Glow */
+    --danger: #ff4757;         /* Alert Red */
+    --warning: #ffa502;        /* Warning Orange */
+    --border: rgba(255, 255, 255, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    padding: 2rem;
+    line-height: 1.6;
+}
+
+/* Header Styling */
+.v-header {
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--danger);
+    padding-left: 1.5rem;
+}
+
+.v-header h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.v-header p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Table Container (Glassmorphism Effect) */
+.v-table-wrapper {
+    background: var(--bg-card);
+    border-radius: 20px;
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.v-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.v-table th {
+    padding: 1.2rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid var(--border);
+}
+
+.v-table td {
+    padding: 1.5rem 1.2rem;
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    border-bottom: 1px solid var(--border);
+}
+
+/* Row Hover Animation */
+.v-table tr {
+    transition: all 0.3s ease;
+}
+
+.v-table tr:hover {
+    background: rgba(255, 255, 255, 0.03);
+    transform: scale(1.002);
+}
+
+/* Violation Type Text */
+.v-type {
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+/* High/Medium Risk Badges (Neon Style) */
+.v-badge {
+    display: inline-block;          /* Ye overlap hone se rokega */
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    white-space: nowrap;            /* Text ko ek hi line mein rakhega */
+    text-align: center;
+    min-width: 100px;               /* Sabhi badges ki width barabar rakhega */
+}
+
+.v-badge.high {
+    background: rgba(255, 71, 87, 0.15);
+    color: var(--danger);
+    border: 1px solid rgba(255, 71, 87, 0.3);
+    box-shadow: 0 0 15px rgba(255, 71, 87, 0.1);
+}
+
+.v-badge.medium {
+    background: rgba(255, 165, 2, 0.15);
+    color: var(--warning);
+    border: 1px solid rgba(255, 165, 2, 0.3);
+}
+
+/* View Snapshot Button (Cyberpunk Style) */
+.v-btn {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 0.6rem 1.2rem;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.v-btn:hover {
+    background: var(--accent);
+    color: white;
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+}
+
+/* Custom Scrollbar for modern look */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-body);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--bg-card);
+    border-radius: 10px;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Violations Page</title>
+
+    <link rel="stylesheet" href="ViolationsPage.css">
+</head>
+
+<body>
+
+    <div class="v-header">
+        <h2>Violations Monitoring</h2>
+        <p>Live AI Proctoring Violations</p>
+    </div>
+
+    <div class="v-table-wrapper">
+
+        <table class="v-table">
+
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Violation Type</th>
+                    <th>Timestamp</th>
+                    <th>Severity</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="violationsData">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+<script>
+
+async function loadViolations() {
+
+    try {
+
+        const response = await fetch(
+            "http://localhost:3000/api/admin/violations"
+        );
+
+        const data = await response.json();
+
+        const table = document.getElementById("violationsData");
+
+        table.innerHTML = "";
+
+        data.forEach(v => {
+
+            table.innerHTML += `
+                <tr>
+                    <td>${v.name}</td>
+                    <td>${v.violation_type}</td>
+                    <td>${v.timestamp}</td>
+
+                    <td>
+                        <span class="v-badge high">
+                            High
+                        </span>
+                    </td>
+
+                    <td>
+                        <button class="v-btn">
+                            View
+                        </button>
+                    </td>
+                </tr>
+            `;
+
+        });
+
+    } catch (err) {
+
+        console.error(err);
+
+    }
+
+}
+
+loadViolations();
+
+</script>
+
+</body>
+</html>

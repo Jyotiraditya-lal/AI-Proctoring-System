@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;   /* horizontal center */
+    align-items: flex-start;   /* top se align */
+    padding-top: 120px;        /* thoda upar se niche push */
+    font-family: Arial, sans-serif;
+}
+
+.login-container {
+    text-align: center;
+}
+h1{font-size:48px;}

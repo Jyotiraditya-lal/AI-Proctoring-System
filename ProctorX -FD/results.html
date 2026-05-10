@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProctorX | Student Results</title>
+    <link rel="stylesheet" href="result.css">
+    
+</head>
+<body>
+
+    <div class="results-container">
+        <div class="r-header">
+            <h2><i class="fas fa-poll-h" style="color: #3498db;"></i> Exam Results & Performance</h2>
+            <div class="r-actions">
+                <button class="btn-export"><i class="fas fa-file-download"></i> Export to Excel</button>
+            </div>
+        </div>
+
+        <div class="r-table-wrapper">
+            <table class="r-table">
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Exam Title</th>
+                        <th>Score (%)</th>
+                        <th>Violations Count</th>
+                        <th>Status</th>
+                        <th>Report</th>
+                    </tr>
+                </thead>
+                <tbody id="resultsData">
+                    <tr>
+                        <td>Suraj Kashyap</td>
+                        <td>Python Midterm</td>
+                        <td><strong>88%</strong></td>
+                        <td>0</td>
+                        <td><span class="res-badge pass">Pass</span></td>
+                        <td><button class="res-btn">View Full Report</button></td>
+                    </tr>
+                    <tr>
+                        <td>Aditya Jha</td>
+                        <td>Python Midterm</td>
+                        <td><strong>75%</strong></td>
+                        <td>2</td>
+                        <td><span class="res-badge pass">Pass</span></td>
+                        <td><button class="res-btn">View Full Report</button></td>
+                    </tr>
+                    <tr>
+                        <td>Kumar Kartik</td>
+                        <td>Python Midterm</td>
+                        <td><strong>32%</strong></td>
+                        <td>5</td>
+                        <td><span class="res-badge fail">Fail</span></td>
+                        <td><button class="res-btn">View Full Report</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+<script>
+
+async function loadResults() {
+
+    try {
+
+        const response = await fetch("http://localhost:3000/api/admin/results");
+
+        const data = await response.json();
+
+        const table = document.getElementById("resultsData");
+
+        table.innerHTML = "";
+
+        data.forEach(result => {
+
+            table.innerHTML += `
+                <tr>
+                    <td>${result.name}</td>
+                    <td>Exam ${result.exam_id}</td>
+                    <td><strong>${result.score}</strong></td>
+                    <td>0</td>
+                    <td>
+                        <span class="res-badge pass">
+                            Completed
+                        </span>
+                    </td>
+                    <td>
+                        <button class="res-btn">
+                            View Report
+                        </button>
+                    </td>
+                </tr>
+            `;
+
+        });
+
+    } catch (err) {
+
+        console.error(err);
+
+    }
+
+}
+
+loadResults();
+
+</script>
+</body>
+</html>

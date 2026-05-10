@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProctorX | Student Dashboard</title>
+    <link rel="stylesheet" href="Dashboard.css">
+    
+</head>
+<body>
+
+    <div class="container">
+        <nav class="sidebar">
+            <div class="logo">
+                <h2>Proctor<span>X</span></h2>
+            </div>
+            <ul class="nav-links">
+                <li class="active"><a href="#"><i class="fas fa-th-large"></i> Dashboard</a></li>
+                <li><a href="#"><i class="fas fa-book"></i> My Exams</a></li>
+                <li><a href="#"><i class="fas fa-poll"></i> Results</a></li>
+                <li><a href="#"><i class="fas fa-user"></i> Profile</a></li>
+                <li class="logout"><a href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <header>
+                <div class="welcome-text">
+                    <h1>Welcome Back, <span id="studentName">Student</span>!</h1>
+                    <p>Check your upcoming exams and stay prepared.</p>
+                </div>
+                <div class="user-profile">
+                    <img src="https://via.placeholder.com/40" alt="User Avatar">
+                </div>
+            </header>
+
+            <section class="stats">
+                <div class="stat-card">
+                    <h3>05</h3>
+                    <p>Total Exams</p>
+                </div>
+                <div class="stat-card">
+                    <h3>02</h3>
+                    <p>Completed</p>
+                </div>
+                <div class="stat-card highlight">
+                    <h3>03</h3>
+                    <p>Pending</p>
+                </div>
+            </section>
+
+            <section class="exams-section">
+                <h2>Available Exams</h2>
+                <div class="exam-grid">
+                    <div class="exam-card">
+                        <div class="exam-info">
+                            <h3>Python Programming</h3>
+                            <p><i class="far fa-clock"></i> 60 Mins | 30 Questions</p>
+                        </div>
+                        <button class="btn-start">Start Exam</button>
+                    </div>
+
+                    <div class="exam-card">
+                        <div class="exam-info">
+                            <h3>Database Systems</h3>
+                            <p><i class="far fa-clock"></i> 45 Mins | 25 Questions</p>
+                        </div>
+                        <button class="btn-start">Start Exam</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>

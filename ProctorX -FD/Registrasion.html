@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration page</title>
+
+    <link rel="stylesheet" href="Registrsion.css">
+</head>
+
+<body>
+
+    <h1>Register</h1>
+
+    <br><br>
+
+    <div id="registar">
+
+        <label>                
+            Enter your name:
+            <input type="text" id="name" placeholder="enter name">
+        </label>
+
+        <br><br>
+
+        <label id="Email">
+            Enter your Email:
+            <input type="text" id="email" placeholder="enter email">
+        </label>
+
+        <br><br>
+
+        <label>
+            Enter Your password:
+            <input type="password" id="password" placeholder="enter password">
+        </label>
+
+        <br><br>
+
+        <label>
+            Confirm Your password:
+            <input type="password" id="confirmPassword" placeholder="confirm password">
+        </label>
+
+        <br><br>
+
+    </div>
+
+    <button id="registerBtn">
+        Register
+    </button>
+
+    <p class="success">
+        Your registration has been successful
+    </p>
+
+
+<script>
+
+document.getElementById("registerBtn")
+.addEventListener("click", async () => {
+
+    const name =
+        document.getElementById("name").value;
+
+    const email =
+        document.getElementById("email").value;
+
+    const password =
+        document.getElementById("password").value;
+
+    const confirmPassword =
+        document.getElementById("confirmPassword").value;
+
+    if (password !== confirmPassword) {
+
+        alert("Passwords do not match");
+
+        return;
+    }
+
+    try {
+
+        const response = await fetch(
+            "http://localhost:3000/api/auth/register",
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify({
+                    name,
+                    email,
+                    password,
+                    role: "student"
+                })
+            }
+        );
+
+        const data = await response.json();
+
+        alert(data.message);
+
+    }
+
+    catch (err) {
+
+        console.error(err);
+
+        alert("Registration failed");
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exampage</title>
+    <link rel="stylesheet" href="exampage.css">
+    
+</head>
+<body>
+    <div class="exam-container">
+    <header class="exam-header">
+        <div class="exam-title">Python Programming - Midterm</div>
+        <div class="timer">Time Left: <span id="time">59:57</span></div>
+    </header>
+
+    <div class="main-layout">
+        <div class="question-section">
+
+            <!--  UPDATED PART -->
+            <div class="question-card">
+                <div id="questions"></div>
+            </div>
+
+            <div class="nav-buttons">
+                <button type="button" class="btn-prev">Previous</button>
+<button type="button" class="btn-next">Next</button>
+<button type="button" class="btn-submit">Submit Exam</button>
+            </div>
+
+            <div id="resultBox" style="display:none; text-align:center; margin-top:20px;">
+    <h2>Exam Finished</h2>
+    <p id="scoreText"></p>
+</div>
+
+        </div>
+
+        <aside class="exam-sidebar">
+          <div class="webcam-box">
+    <video id="webcam" autoplay playsinline></video>
+</div>
+           <div class="grid" id="palette"></div>
+            </div>
+        </aside>
+    </div>
+</div>
+<script src="exampage.js"></script>
+</body>
+</html>

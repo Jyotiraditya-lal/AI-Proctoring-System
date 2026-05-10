@@ -1,0 +1,14 @@
+.success{display:none; color:rgb(13, 163, 13);}
+button:hover{background-color: rgb(39, 196, 25); color:rgb(32, 7, 173); }
+#registar{
+    text-align:center;
+    font-weight: 550;
+    text-align: center;
+    
+}
+h1{text-align: center;}
+button{
+    display:block;
+    margin:20px auto;
+    border:2px solid;
+   }

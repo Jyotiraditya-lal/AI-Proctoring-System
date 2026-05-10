@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProctorX | Admin Panel</title>
+    <link rel="stylesheet" href="Admin_Dashboard_UI.css">
+    
+</head>
+<body>
+
+    <div class="admin-container">
+        <nav class="admin-sidebar">
+            <div class="admin-logo">
+                <h2>Proctor<span>X</span> Admin</h2>
+            </div>
+            <ul class="nav-menu">
+
+    <li class="active">
+        <a href="Admin_Dashboard_UI.html">
+            <i class="fas fa-chart-line"></i> Statistics
+        </a>
+    </li>
+
+    <li>
+        <a href="createexam.html">
+            <i class="fas fa-plus-circle"></i> Create Exam
+        </a>
+    </li>
+
+    <li>
+        <a href="ViolationsPage.html">
+            <i class="fas fa-exclamation-triangle"></i> View Violations
+        </a>
+    </li>
+
+    <li>
+        <a href="results.html">
+            <i class="fas fa-users"></i> Student Results
+        </a>
+    </li>
+
+    <li class="logout">
+        <a href="login.html">
+            <i class="fas fa-power-off"></i> Logout
+        </a>
+    </li>
+
+</ul>
+        </nav>
+
+        <main class="admin-main">
+            <header class="admin-header">
+                <h1>Overview</h1>
+                <div class="admin-profile">Admin User <i class="fas fa-user-shield"></i></div>
+            </header>
+
+            <section class="admin-stats">
+                <div class="stat-box">
+                    <i class="fas fa-user-graduate"></i>
+                    <div>
+                        <h3>120</h3>
+                        <p>Total Students</p>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-file-alt"></i>
+                    <div>
+                        <h3>12</h3>
+                        <p>Active Exams</p>
+                    </div>
+                </div>
+                <div class="stat-box alert">
+                    <i class="fas fa-skull-crossbones"></i>
+                    <div>
+                        <h3>45</h3>
+                        <p>Total Violations</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="exam-table-section">
+                <h2>Manage Active Exams</h2>
+                <table class="exam-table">
+                    <thead>
+                        <tr>
+                            <th>Exam Name</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Python Basics</td>
+                            <td>2026-04-15</td>
+                            <td><span class="status live">Live</span></td>
+                            <td><button class="btn-view">Details</button></td>
+                        </tr>
+                        <tr>
+                            <td>Java Core</td>
+                            <td>2026-04-16</td>
+                            <td><span class="status pending">Scheduled</span></td>
+                            <td><button class="btn-view">Edit</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
